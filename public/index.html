@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamentos de Consultas Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar-brand {
+            color: #28a745 !important;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        .welcome-container {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .welcome-title {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .welcome-text {
+            font-size: 1.2rem;
+            color: #455a64;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        .btn-custom {
+            margin: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .btn-primary {
+            background-color: #2898a7;
+            border-color: #2898a7;
+        }
+        .btn-primary:hover {
+            background-color: #2898a7;
+            border-color: #2898a7;
+            transform: translateY(-2px);
+        }
+        .btn-outline-primary {
+            color: #2898a7;
+            border-color: #28a745;
+        }
+        .btn-outline-primary:hover {
+            background-color: #2898a7;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .welcome-title {
+                font-size: 2rem;
+            }
+            .welcome-text {
+                font-size: 1rem;
+            }
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-custom {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand">
+                <i class="fas fa-calendar-check me-2"></i>Sistema de Agendamentos de Consultas Online
+            </a>
+        </div>
+    </nav>
+
+    
+    <div class="container py-5">
+        <div class="welcome-container">
+            <h1 class="welcome-title">Bem-vindo ao Nosso Sistema</h1>
+            <p class="welcome-text">
+                Agende suas consultas médicas de forma rápida e simples. Acesse os serviços de saúde disponíveis em sua região, fique por dentro das campanhas de vacinação e mantenha-se informado com as últimas notícias sobre saúde pública.
+            </p>
+            
+            <div class="buttons-container">
+                <a href="/public/login.html" class="btn btn-primary btn-custom">
+                    <i class="fas fa-sign-in-alt btn-icon"></i>Login
+                </a>
+                <a href="/public/cadastro.html" class="btn btn-primary btn-custom">
+                    <i class="fas fa-user-plus btn-icon"></i>Cadastro
+                </a>
+            
+                <a href="/public/campanhas.html" class="btn btn-outline-primary btn-custom">
+                    <i class="fas fa-syringe btn-icon"></i>Campanhas
+                </a>
+                <a href="/public/noticias.html" class="btn btn-outline-primary btn-custom">
+                    <i class="fas fa-newspaper btn-icon"></i>Notícias
+                </a>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

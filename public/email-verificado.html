@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirmação de E-mail</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/confirmacao-email.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-title">
+        <h2>Confirmação de E-mail</h2>
+      </div>
+      <div id="confirmation-result">
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('confirmation-result').innerHTML = `
+        <p class="text-success">E-mail confirmado com sucesso!</p>
+        <p>Sua conta foi ativada e você já pode fazer login.</p>
+        <a href="login.html" class="btn btn-primary mt-3">Ir para o login</a>
+      `;
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro - Sistema UBS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/public/cadastro.css" />
+</head>
+<body>
+  <main class="login-page">
+    <div class="login-container">
+      <div class="login-box">
+        <div class="login-title">
+          <h2>Cadastro de Usuário</h2>
+        </div>
+
+        <form id="cadastroForm" novalidate>
+          <div class="input-group">
+            <label for="nomeCadastro">Nome Completo</label>
+            <input type="text" id="nomeCadastro" required minlength="3" />
+          </div>
+
+          <div class="input-group">
+            <label for="campoLoginCadastro">E-mail</label>
+            <input type="email" id="campoLoginCadastro" required />
+          </div>
+
+          <div class="input-group" id="funcionarioPacienteGroup">
+            <label class="mb-2">Você é:</label>
+            <div class="d-flex flex-column gap-2">
+              <label class="form-check-label">
+                <input type="radio" name="tipoUsuarioEmail" value="paciente" checked /> Paciente
+              </label>
+              <label class="form-check-label">
+                <input type="radio" name="tipoUsuarioEmail" value="funcionario" /> Funcionário
+              </label>
+            </div>
+          </div>
+
+          <div class="input-group" id="codigoFuncionarioGroup" style="display: none;">
+            <label for="codigoFuncionario">Código de Funcionário (UBS)</label>
+            <input type="text" id="codigoFuncionario" placeholder="Ex: FUNC2025" />
+          </div>
+
+          <div class="input-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" required minlength="6" />
+            <div class="password-strength">
+            <div class="strength-bar"></div>
+              <span class="strength-text">Força: <span id="strength-value">fraca</span></span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="confirmarSenhaCadastro">Confirmar Senha</label>
+            <input type="password" id="confirmarSenhaCadastro" required minlength="6" />
+          </div>
+
+          <div class="input-group">
+            <label for="telefoneCadastro">Telefone (para contato)</label>
+            <input type="tel" id="telefoneCadastro" placeholder="Apenas números, DDD + número" required />
+          </div>
+
+          <button type="submit" class="cta-button">Cadastrar</button>
+
+          <div class="forgot-password">
+            <a href="login.html">Já tem uma conta? Faça login</a>
+          </div>
+
+          <div class="forgot-password">
+            <a href="index.html">← Voltar para o Início</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/public/cadastro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

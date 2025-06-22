@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notificações</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.4;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      flex: 1;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h2 {
+      color: #00b894;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .list-group {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .list-group-item {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .list-group-item strong {
+      color: #00b894;
+    }
+
+    .list-group-item small {
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    button {
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      padding: 8px 14px;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-secondary {
+      background-color: #0D6EFD;
+      color: white;
+      margin-top: 20px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #0b5ed7;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      color: white;
+      margin-right: 10px;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+
+    @media (max-width: 600px) {
+      .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      button {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h2 class="mb-4">Minhas Notificações</h2>
+    <ul id="listaNotificacoes" class="list-group"></ul>
+    <button id="btnVoltarPainel" class="btn btn-secondary">Voltar ao Painel</button>
+  </div>
+
+  <script>
+    const usuarioLogado = {
+      uid: "u3",
+      nome: "Carla"
+    };
+
+    let notificacoes = [
+      {
+        id: "n1",
+        usuarioId: "u3",
+        mensagem: "Sua consulta foi remarcada para amanhã às 14h.",
+        tipo: "confirmacao",
+        resposta: null,
+        dataEnvio: new Date()
+      },
+      {
+        id: "n2",
+        usuarioId: "u3",
+        mensagem: "Consulta confirmada com sucesso!",
+        tipo: "confirmacao",
+        resposta: "confirmado",
+        dataEnvio: new Date(Date.now() - 86400000)
+      },
+      {
+        id: "n3",
+        usuarioId: "u2",
+        mensagem: "Sua consulta foi cancelada. Por favor reagende.",
+        tipo: "cancelamento",
+        resposta: null,
+        dataEnvio: new Date()
+      }
+    ];
+
+    function formatarData(data) {
+      const d = new Date(data);
+      return `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
+    }
+
+    function carregarNotificacoes() {
+      const lista = document.getElementById("listaNotificacoes");
+      lista.innerHTML = "";
+
+      const minhasNotificacoes = notificacoes.filter(n => n.usuarioId === usuarioLogado.uid);
+
+      if (minhasNotificacoes.length === 0) {
+        lista.innerHTML = "<li class='list-group-item'>Nenhuma notificação encontrada.</li>";
+        return;
+      }
+
+      minhasNotificacoes.forEach(n => {
+        const li = document.createElement("li");
+        li.className = "list-group-item flex-column";
+
+        const info = document.createElement("div");
+        info.innerHTML = `<strong>📢</strong> ${n.mensagem}<br><small>${formatarData(n.dataEnvio)}</small>`;
+        li.appendChild(info);
+
+        if (!n.resposta) {
+          const botao = document.createElement("button");
+          botao.className = "btn btn-success mt-2";
+          botao.textContent = "OK, confirmo minha presença";
+          botao.onclick = () => {
+            n.resposta = "confirmado";
+            alert("Presença confirmada com sucesso.");
+            carregarNotificacoes();
+          };
+          li.appendChild(botao);
+        } else {
+          const confirmado = document.createElement("span");
+          confirmado.className = "text-muted mt-2";
+          confirmado.innerHTML = "<em>✅ Confirmado</em>";
+          li.appendChild(confirmado);
+        }
+
+        lista.appendChild(li);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      carregarNotificacoes();
+
+      document.getElementById("btnVoltarPainel").addEventListener("click", () => {
+        window.location.href = "painel_usuario.html"; 
+      });
+    });
+  </script>
+</body>
+</html>

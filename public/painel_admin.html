@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel Administrativo - UBS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="painel_admin.css" />
+  
+</head>
+<body>
+
+<header>
+  <h1>Painel Administrativo - UBS</h1>
+  <button id="btnSair" class="btn btn-danger ms-auto">Sair</button>
+</header>
+
+<main>
+  <section id="menuPrincipal">
+    <h2>O que você deseja fazer?</h2>
+    <button id="btnAbrirAgendamento" class="btn btn-primary mb-2">Consultar Agenda e Reagendar Médico</button>
+    <button id="btnAbrirTriagem" class="btn btn-primary mb-2">Realizar Triagem de Paciente</button>
+    <button id="btnAbrirListaEspera" class="btn btn-primary mb-2">Visualizar Lista de Espera</button>
+    <button id="btnAbrirConfirmacoes" class="btn btn-primary mb-2">Visualizar Consultas Reagendadas</button>
+    <button id="btnGerarRelatorio" class="btn btn-primary mb-2">Gerar Relatório Diário</button>
+    <button id="btnExportarCSV" class="btn btn-primary mb-2">Exportar Relatório Diário (CSV)</button>
+  </section>
+
+  <section id="relatorioSection" class="hidden">
+    <h2>Relatório Diário da UBS</h2>
+    <pre id="relatorioTexto" style="white-space: pre-wrap; background: #f0f0f0; padding: 10px; border-radius: 5px;"></pre>
+    <button class="btn btn-secondary btnVoltarMenu">Voltar ao Menu</button>
+  </section>
+
+  <section class="filtro hidden" id="secaoAgendamento">
+    <h2>Consultar Agenda de Médico</h2>
+    <label for="medico">Médico:</label>
+    <select id="medico"><option value="">Selecione um médico</option></select>
+    <label for="data">Data:</label>
+    <input type="date" id="data" />
+    <div class="botoes-alinhados">
+        <button id="buscarConsultas" class="btn btn-primary">Buscar Consultas</button>
+        <button class="btn btn-secondary btnVoltarMenu">Voltar ao Menu</button>
+  </div>
+</section>
+
+
+  <section id="consultasSection" class="hidden">
+    <h3>Consultas Agendadas</h3>
+    <ul id="listaConsultas"></ul>
+    <div class="remarcar-area mt-3">
+      <label for="novaData">Nova Data:</label>
+      <input type="date" id="novaData" />
+      <label for="mensagemNotificacao">Mensagem para paciente:</label>
+      <textarea id="mensagemNotificacao" placeholder="Ex: Sua consulta foi remarcada..."></textarea>
+      <button id="btnRemarcarConsultas" class="btn btn-primary">Remarcar Selecionadas e Notificar</button>
+      <button id="btnCancelarConsultas" class="btn btn-danger">Cancelar Selecionadas</button>
+    </div>
+    <button class="btn btn-secondary btnVoltarMenu mt-3">Voltar ao Menu</button>
+  </section>
+
+  <section id="listaEsperaSection" class="hidden">
+    <h3>Lista de Espera</h3>
+    <label for="medicoEspera">Médico:</label>
+    <select id="medicoEspera"><option value="">Selecione um médico</option></select>
+    <label for="dataEspera">Data:</label>
+    <input type="date" id="dataEspera" />
+    <button id="btnBuscarListaEspera" class="btn btn-primary mb-3">Buscar Lista de Espera</button>
+    <ul id="listaEspera"></ul>
+    <button class="btn btn-secondary btnVoltarMenu">Voltar ao Menu</button>
+  </section>
+
+  <section id="confirmacoesSection" class="hidden">
+    <h3>Consultas Confirmadas pelos Pacientes</h3>
+    <ul id="listaConfirmacoes" class="confirmacoes-list"></ul>
+    <button class="btn btn-secondary btnVoltarMenu">Voltar ao Menu</button>
+  </section>
+
+  <section class="triagem hidden" id="secaoTriagem">
+    <h2>Triagem Digital</h2>
+    <form id="formTriagem">
+      <label for="nomePaciente">Nome do Paciente:</label>
+      <input type="text" id="nomePaciente" required />
+      <label for="idadePaciente">Idade:</label>
+      <input type="number" id="idadePaciente" required />
+      <label for="sintomas">Sintomas:</label>
+      <textarea id="sintomas" required></textarea>
+      <label for="urgencia">Urgência:</label>
+      <select id="urgencia" required>
+        <option value="">Selecione</option>
+        <option value="baixa">Baixa</option>
+        <option value="media">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+      <label for="especialidade">Especialidade sugerida:</label>
+      <select id="especialidade" required>
+        <option value="">Selecione</option>
+        <option value="clinico">Clínico Geral</option>
+        <option value="pediatria">Pediatria</option>
+        <option value="ginecologia">Ginecologia</option>
+      </select>
+      <label for="medicoDisponivel">Médico disponível:</label>
+      <select id="medicoDisponivel" required><option value="">Selecione</option></select>
+      <button type="submit" class="btn btn-primary mt-2">Encaminhar Paciente</button>
+    </form>
+    <p id="mensagemTriagem" style="color: green; margin-top: 10px;"></p>
+    <button class="btn btn-secondary btnVoltarMenu mt-3">Voltar ao Menu</button>
+  </section>
+</main>
+
+<script src="/public/painel_admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

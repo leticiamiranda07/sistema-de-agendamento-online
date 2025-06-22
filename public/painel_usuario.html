@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Painel do Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="painel_usuario.css" />
+</head>
+<body>
+
+<header class="painel-header">
+    <h1>Painel do Usuário</h1>
+    <button class="logout-button" onclick="confirmarSaida()">Sair</button>
+</header>
+
+<main>
+    <section class="dashboard-card acoes-rapidas">
+        <h2>Ações Rápidas</h2>
+        <div class="botoes-rapidos">
+            <a href="agendamento.html" class="cta-button">Agendar Nova Consulta</a>
+            <a href="notificacoes.html" class="secondary-button">📢 Ver Notificações</a>
+            <button onclick="abrirFormularioEspera()" class="secondary-button">📥 Entrar na Lista de Espera</button>
+
+            <div id="formularioListaEspera" style="display: none; margin-top: 10px;">
+                <label>Nome:
+                    <input type="text" id="nomeListaEspera" required />
+                </label><br><br>
+
+                <label>Especialidade:
+                    <input type="text" id="especialidadeListaEspera" required />
+                </label><br><br>
+
+                <label>Médico:
+                    <select id="medicoListaEspera" required>
+                        <option value="">Carregando médicos...</option>
+                    </select>
+                </label>
+
+                <label>Data desejada:
+                    <input type="date" id="dataListaEspera" required />
+                </label><br><br>
+
+                <button onclick="adicionarNaListaEspera()" class="cta-button">Enviar</button>
+
+                <p id="mensagemListaEspera" style="display: none; color: green; margin-top: 10px;"></p>
+            </div>
+        </div>
+
+        <div id="blocoNotasContainer" class="bloco-notas" style="display:none;">
+            <textarea id="blocoNotas" placeholder="Anote aqui suas informações importantes..."></textarea>
+            <div class="bloco-notas-botoes">
+                <button onclick="salvarNotas()">Salvar</button>
+                <button onclick="limparNotas()">Limpar</button>
+                <span id="statusSalvo" class="status-salvo">Salvo!</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Consultas Agendadas</h2>
+        <div id="consultasAgendadas" class="consultas-lista"></div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Consultas em Espera</h2>
+        <div id="consultasEspera" class="consultas-lista"></div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Consultas Confirmadas</h2>
+        <div id="consultasConfirmadas" class="consultas-lista"></div>
+    </section>
+
+    <section class="dashboard-card">
+        <h2>Consultas Anteriores</h2>
+        <div id="consultasAnteriores" class="consultas-lista"></div>
+    </section>
+</main>
+
+<script src="painel_usuario.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/login.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-title">
+        <h2>Login do Sistema</h2>
+      </div>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <label for="identificador">E-mail</label>
+          <input type="text" id="identificador" required />
+        </div>
+
+        <div class="input-group" id="funcionarioGroup" style="display: none;">
+          <label for="ehFuncionario">Você é funcionário da UBS?</label>
+          <select id="ehFuncionario">
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" required />
+        </div>
+
+        <button class="cta-button" type="submit">Entrar</button>
+      </form>
+
+      <div class="forgot-password">
+        <a href="/public/esquecer-senha.html">Esqueceu a senha?</a>
+      </div>
+
+      <div class="forgot-password">
+        <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+      </div>
+
+      <a href="/public/index.html" class="btn-voltar">← Voltar para o Início</a>
+    </div>
+  </div>
+
+  <script type="module" src="/public/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

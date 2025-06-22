@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redefinir Senha</title>
+  <style>
+    .login-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-title {
+      background-color: #28a745;
+      color: white;
+      padding: 1rem;
+      margin: -2rem -2rem 1.5rem -2rem;
+      border-radius: 10px 10px 0 0;
+      text-align: left;
+    }
+
+    .login-title h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #218838;
+    }
+
+    #recoveryForm {
+      margin-top: 1.5rem;
+    }
+
+    .forgot-password {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .forgot-password a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-title">
+        <h2>Redefinir Senha</h2>
+      </div>
+      <form id="recoveryForm">
+        <div class="input-group">
+          <label for="novaSenha">Nova Senha</label>
+          <input type="password" id="novaSenha" required minlength="6" placeholder="Digite a nova senha" />
+        </div>
+        <div class="input-group">
+          <label for="confirmaSenha">Confirmar Senha</label>
+          <input type="password" id="confirmaSenha" required minlength="6" placeholder="Confirme a nova senha" />
+        </div>
+        <button type="submit" class="cta-button">Redefinir Senha</button>
+        <div class="message" id="msg"></div>
+      </form>
+      <div class="forgot-password">
+        <a href="login.html">← Voltar para o login</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('recoveryForm');
+    const novaSenha = document.getElementById('novaSenha');
+    const confirmaSenha = document.getElementById('confirmaSenha');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.textContent = '';
+
+      if (novaSenha.value.length < 6) {
+        msg.textContent = 'A senha deve ter pelo menos 6 caracteres.';
+        return;
+      }
+
+      if (novaSenha.value !== confirmaSenha.value) {
+        msg.textContent = 'As senhas não coincidem.';
+        return;
+      }
+
+      // Aqui você pode fazer o que quiser para "salvar" a senha no localStorage ou backend
+      // Por enquanto só vai mostrar alerta e redirecionar
+
+      alert('Senha redefinida com sucesso!');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

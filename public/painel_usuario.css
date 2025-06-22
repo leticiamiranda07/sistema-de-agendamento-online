@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.painel-header {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.painel-header h1 {
+    font-size: 1.6rem;
+}
+
+.logout-button {
+    background-color: #DC3545;
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #DC3545;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dashboard-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #00b894;
+}
+
+.acoes-rapidas .botoes-rapidos a,
+.acoes-rapidas .botoes-rapidos button {
+    background-color: #0D6EFD;
+    color: white;
+    padding: 10px 16px;
+    margin: 5px 8px 5px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.acoes-rapidas .botoes-rapidos a:hover,
+.acoes-rapidas .botoes-rapidos button:hover {
+    background-color: #0D6EFD;
+}
+
+.bloco-notas {
+    margin-top: 20px;
+}
+
+.bloco-notas textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.bloco-notas-botoes {
+    margin-top: 8px;
+}
+
+.bloco-notas-botoes button {
+    background-color: #0D6EFD;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.bloco-notas-botoes button:hover {
+    background-color: #0D6EFD;
+}
+
+.status-salvo {
+    color: green;
+    font-weight: bold;
+    display: none;
+    vertical-align: middle;
+}
+
+.consultas-lista .consulta-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+}
+
+.consultas-lista .consulta-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.consultas-lista strong {
+    color: #333;
+}
+
+.consultas-lista p {
+    margin: 3px 0;
+    font-size: 0.9rem;
+}
+
+.consultas-lista .consulta-actions button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.consultas-lista .consulta-actions button.ver {
+    background-color: #00b894;
+}
+
+.consultas-lista .consulta-actions button.ver:hover {
+    background-color: #017857;
+}
+
+.consultas-lista .consulta-actions button.cancelar {
+    background-color: #e74c3c;
+}
+
+.consultas-lista .consulta-actions button.cancelar:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 600px) {
+    .acoes-rapidas .botoes-rapidos a,
+    .acoes-rapidas .botoes-rapidos button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

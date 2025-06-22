@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notícias da Saúde - Manaus 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .navbar-brand {
+      color: #28a745 !important;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    .header-container {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border-radius: 15px;
+      margin-top: 2rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .header-title {
+      font-size: 2.5rem;
+      color: #1565c0;
+      font-weight: 700;
+    }
+    .header-subtitle {
+      font-size: 1.2rem;
+      color: #455a64;
+      margin-top: 1rem;
+    }
+    .news-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+      transition: transform 0.2s;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+    .news-title {
+      color: #1565c0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .news-date {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
+    .btn-news {
+      background-color: #1565c0;
+      border: none;
+      color: #fff;
+      margin-top: 1rem;
+    }
+    .btn-news:hover {
+      background-color: #0d47a1;
+    }
+    @media (max-width: 768px) {
+      .header-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-newspaper me-2"></i>Notícias da Saúde - Manaus/AM
+    </a>
+    <div>
+      <button onclick="confirmarSaida()" class="btn btn-outline-danger me-2">
+        <i class="fas fa-sign-out-alt me-1"></i>Sair
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="container header-container">
+    <h1 class="header-title">Notícias Recentes</h1>
+    <p class="header-subtitle">
+      Acompanhe as últimas notícias sobre saúde pública e campanhas de prevenção em Manaus e no Amazonas.
+    </p>
+  </div>
+
+  <div class="container py-4" id="noticias">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card news-card">
+          <div class="card-body">
+            <h5 class="news-title"><i class="fas fa-bug me-2 text-danger"></i>Casos de dengue têm redução em Manaus</h5>
+            <p class="news-date">Publicado em: 06/06/2025</p>
+            <p>Dados da Secretaria Municipal de Saúde indicam queda significativa nos registros de dengue após intensificação das ações de combate ao mosquito Aedes aegypti.</p>
+            <a href="https://www.manaus.am.gov.br/noticia/saude/casos-de-dengue-reduz/" target="_blank" class="btn btn-news">
+              <i class="fas fa-info-circle me-1"></i>Ler notícia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card news-card">
+          <div class="card-body">
+            <h5 class="news-title"><i class="fas fa-lungs me-2 text-success"></i>Mortes por síndromes respiratórias caem 14% no AM</h5>
+            <p class="news-date">Publicado em: 10/06/2025</p>
+            <p>Segundo a FVS-AM, o estado registrou redução expressiva nos óbitos por síndromes respiratórias, reflexo da vacinação e das medidas de prevenção.</p>
+            <a href="https://g1.globo.com/am/amazonas/noticia/2025/06/10/amazonas-registra-queda-de-14percent-nas-mortes-por-sindromes-respiratorias.ghtml" target="_blank" class="btn btn-news">
+              <i class="fas fa-info-circle me-1"></i>Ler notícia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card news-card">
+          <div class="card-body">
+            <h5 class="news-title"><i class="fas fa-mosquito-net me-2 text-warning"></i>Saúde alerta sobre prevenção da malária no Amazonas</h5>
+            <p class="news-date">Publicado em: 12/06/2025</p>
+            <p>O governo estadual reforça a importância da prevenção da malária, especialmente em áreas rurais e ribeirinhas, com uso de mosquiteiros e diagnóstico precoce.</p>
+            <a href="https://d24am.com/saude/saude-alerta-sobre-a-importancia-da-prevencao-da-malaria-no-am/" target="_blank" class="btn btn-news">
+              <i class="fas fa-info-circle me-1"></i>Ler notícia
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card news-card">
+          <div class="card-body">
+            <h5 class="news-title"><i class="fas fa-child me-2 text-primary"></i>Proposta de campanha “Junho Verde” contra escoliose</h5>
+            <p class="news-date">Publicado em: 05/06/2025</p>
+            <p>Vereador propõe a criação de campanha educativa sobre escoliose para conscientizar a população jovem sobre diagnóstico e prevenção precoce.</p>
+            <a href="https://www.cmm.am.gov.br/manaus-pode-ganhar-campanha-junho-verde-para-prevencao-da-escoliose-propoe-vereador-sergio-bare/" target="_blank" class="btn btn-news">
+              <i class="fas fa-info-circle me-1"></i>Ler notícia
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+   <script>
+  function confirmarSaida() {
+    const primeiraConfirmacao = confirm("Você deseja realmente sair desta página?");
+    if (primeiraConfirmacao) {
+      const segundaConfirmacao = confirm("Tem certeza absoluta?");
+      if (segundaConfirmacao) {
+        window.location.href = "index.html";
+      }
+    }
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
