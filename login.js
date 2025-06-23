@@ -11,6 +11,13 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
   const identificador = document.getElementById('identificador').value.trim();
   const senha = document.getElementById('senha').value;
+  const funcionarioSelecionado = document.getElementById("ehFuncionario").value;
+
+  if (!funcionarioSelecionado) {
+    alert("Por favor, selecione se você é funcionário da UBS.");
+    return;
+  }
+
 
   const usuario = usuarios.find(u => u.email === identificador && u.senha === senha);
 
@@ -19,9 +26,18 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     return;
   }
 
+  const marcouFuncionario = funcionarioSelecionado === "sim";
+
+  // Rejeita login se a opção marcada (sim/não) não condiz com o tipo do usuário
+  if (usuario.isFuncionario !== marcouFuncionario) {
+    alert("Opção de tipo de usuário incorreta para este login.");
+    return;
+  }
+
   // Salva o usuário logado no localStorage
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
+  // Redireciona conforme tipo
   if (usuario.isFuncionario) {
     window.location.href = "/painel_admin.html";
   } else {
