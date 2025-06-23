@@ -1,5 +1,4 @@
 {
-  "public": "public",	
   "cleanUrls": true,
   "rewrites": [
     { "source": "/login", "destination": "/login.html" },
