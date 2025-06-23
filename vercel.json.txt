@@ -1,17 +1,3 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/login", "destination": "/login.html" },
-    { "source": "/cadastro", "destination": "/cadastro.html" },
-    { "source": "/campanhas", "destination": "/campanhas.html" },
-    { "source": "/confirmacao-email", "destination": "/confirmacao-email.html" },
-    { "source": "/email-verificado", "destination": "/email-verificado.html" },
-    { "source": "/esquecer-senha", "destination": "/esquecer-senha.html" },
-    { "source": "/noticias", "destination": "/noticias.html" },
-    { "source": "/painel_usuario", "destination": "/painel_usuario.html" },
-    { "source": "/painel_admin", "destination": "/painel_admin.html" },
-    { "source": "/agendamento", "destination": "/agendamento.html" },
-    { "source": "/notificacoes", "destination": "/notificacoes.html" },
-    { "source": "/recuperar-senha", "destination": "/recuperar-senha.html" }
-  ]
+  "public": "public"
 }
