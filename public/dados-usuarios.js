@@ -1,8 +1,8 @@
 export const usuarios = [
   {
-    email: "maria@gmail.com",
+    email: "usuario@exemplo",
     senha: "123456",
-    nome: "Maria da Silva",
+    nome: "Amanda Letícia Miranda de Sousa",
     tipoUsuario: "paciente",
     telefoneContato: "92999999999",
     isFuncionario: false
@@ -10,9 +10,9 @@ export const usuarios = [
   {
     email: "funcionario@ubs.com",
     senha: "123456",
-    nome: "João Almeida",
+    nome: "Cristiano Ronaldo",
     tipoUsuario: "funcionario",
-    telefoneContato: "92988888888",
+    telefoneContato: "92977777777",
     isFuncionario: true
   }
 ];
