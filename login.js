@@ -1,4 +1,4 @@
-import { usuarios } from "./dados-usuarios.js";
+import { usuarios } from "../dados-usuarios.js";
 
 document.getElementById('identificador').addEventListener('input', function () {
   const valor = this.value.trim();
@@ -23,8 +23,8 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
   if (usuario.isFuncionario) {
-    window.location.href = "painel_admin.html";
+    window.location.href = "/painel_admin.html";
   } else {
-    window.location.href = "painel_usuario.html";
+    window.location.href = "/painel_usuario.html";
   }
 });
