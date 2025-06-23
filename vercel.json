@@ -1,6 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
+    { "source": "/", "destination": "/public/index.html" },
     { "source": "/login", "destination": "/public/login.html" },
     { "source": "/cadastro", "destination": "/public/cadastro.html" },
     { "source": "/painel_usuario", "destination": "/public/painel_usuario.html" },
