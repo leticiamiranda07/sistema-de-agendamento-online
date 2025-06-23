@@ -23,8 +23,8 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
   if (usuario.isFuncionario) {
-    window.location.href = "/public/painel_admin.html";
+    window.location.href = "painel_admin.html";
   } else {
-    window.location.href = "/public/painel_usuario.html";
+    window.location.href = "painel_usuario.html";
   }
 });

@@ -78,5 +78,5 @@ agendamentoForm.addEventListener('submit', function (e) {
   localStorage.setItem('consultas', JSON.stringify(consultas));
 
   alert('Consulta agendada com sucesso!');
-  window.location.href = '/public/painel_usuario.html';
+  window.location.href = 'painel_usuario.html';
 });
