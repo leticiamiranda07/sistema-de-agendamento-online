@@ -1,18 +1,18 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/public/index.html" },
-    { "source": "/login", "destination": "/public/login.html" },
-    { "source": "/cadastro", "destination": "/public/cadastro.html" },
-    { "source": "/painel_usuario", "destination": "/public/painel_usuario.html" },
-    { "source": "/painel_admin", "destination": "/public/painel_admin.html" },
-    { "source": "/agendamento", "destination": "/public/agendamento.html" },
-    { "source": "/notificacoes", "destination": "/public/notificacoes.html" },
-    { "source": "/campanhas", "destination": "/public/campanhas.html" },
-    { "source": "/noticias", "destination": "/public/noticias.html" },
-    { "source": "/recuperar-senha", "destination": "/public/recuperar-senha.html" },
-    { "source": "/confirmacao-email", "destination": "/public/confirmacao-email.html" },
-    { "source": "/email-verificado", "destination": "/public/email-verificado.html" },
-    { "source": "/esquecer-senha", "destination": "/public/esquecer-senha.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/cadastro", "destination": "/cadastro.html" },
+    { "source": "/painel_usuario", "destination": "/painel_usuario.html" },
+    { "source": "/painel_admin", "destination": "/painel_admin.html" },
+    { "source": "/agendamento", "destination": "/agendamento.html" },
+    { "source": "/notificacoes", "destination": "/notificacoes.html" },
+    { "source": "/campanhas", "destination": "/campanhas.html" },
+    { "source": "/noticias", "destination": "/noticias.html" },
+    { "source": "/recuperar-senha", "destination": "/recuperar-senha.html" },
+    { "source": "/confirmacao-email", "destination": "/confirmacao-email.html" },
+    { "source": "/email-verificado", "destination": "/email-verificado.html" },
+    { "source": "/esquecer-senha", "destination": "/esquecer-senha.html" }
   ]
 }
