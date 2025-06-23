@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/login", "destination": "/login.html" },
+    { "source": "/login", "destination": "login.html" },
     { "source": "/cadastro", "destination": "/cadastro.html" },
     { "source": "/campanhas", "destination": "/campanhas.html" },
     { "source": "/confirmacao-email", "destination": "/confirmacao-email.html" },

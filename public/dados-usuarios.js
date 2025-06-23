@@ -1,6 +1,6 @@
 export const usuarios = [
   {
-    email: "usuario@exemplo",
+    email: "usuario@exemplo.com",
     senha: "123456",
     nome: "Amanda Letícia Miranda de Sousa",
     tipoUsuario: "paciente",
